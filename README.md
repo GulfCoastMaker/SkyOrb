@@ -75,17 +75,22 @@ RES, DC, and CS pins.
 2. **Flash the firmware** — go to the [installer page](https://gulfcoastmaker.github.io/SkyOrb/)
    in Chrome or Edge, plug in your ESP32, and click **Install SkyOrb**.
 3. **Connect to WiFi** — after flashing, the ESP32 creates a WiFi hotspot
-   called **SKYORB-Setup** (password: **radar1234**). Connect your phone
-   to it, and a setup page opens automatically. Choose your home WiFi and
-   enter the password.
-4. **Set your location** — once it's connected, the radar display shows the
-   web portal address on screen. On a phone or computer connected to the
-   **same WiFi**, open your browser and go to:
+   called **SKYORB-Setup** (password: **radar1234**). On your phone, connect
+   to that hotspot — a setup page pops up. Choose your home WiFi and enter
+   the password, then save.
+4. **Switch your phone back to your home WiFi** — ⚠️ this is the step people
+   miss. After saving, your phone usually stays stuck on the SKYORB-Setup
+   hotspot. Go into your phone's WiFi settings and reconnect to your normal
+   home network. (Some phones do this on their own after a minute.) If you
+   skip this, the next step won't load.
+5. **Set your location** — now, with your phone on your home WiFi, open a
+   browser and go to:
 
    ### `http://skyorb.local`
 
-   (The display also shows a numeric IP address as a backup, in case
-   `skyorb.local` doesn't resolve on your network.) In the portal you can:
+   (The radar display also shows this address on screen, with a backup
+   numeric IP in case `skyorb.local` doesn't resolve on your network.) In
+   the portal you can:
    - Enter your address or coordinates to center the radar
    - Choose your search radius (5–30 miles)
    - Add or remove airports

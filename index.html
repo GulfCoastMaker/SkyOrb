@@ -212,11 +212,19 @@
   </div>
   <div class="step">
     <div class="step-num">3</div>
-    <div class="step-text">Click <strong>Install SkyOrb</strong> below, select your ESP32's COM port, and follow the prompts. It takes about 30 seconds.</div>
+    <div class="step-text">Click <strong>Install SkyOrb</strong> below, select your ESP32's COM port, and follow the prompts. Flashing takes a couple of minutes.</div>
   </div>
   <div class="step">
     <div class="step-num">4</div>
-    <div class="step-text">After flashing, your ESP32 will open a hotspot called <strong>SKYORB-Setup</strong> (password: <strong>radar1234</strong>). Connect to it with your phone, choose your home WiFi, and enter your password. Then — on any device on your home WiFi — open <strong>http://skyorb.local</strong> in a browser to set your location. The radar display also shows this address on screen at startup.</div>
+    <div class="step-text">After flashing, your ESP32 opens a hotspot called <strong>SKYORB-Setup</strong> (password: <strong>radar1234</strong>). On your phone, connect to that hotspot — a setup page pops up. Choose your home WiFi from the list and enter its password, then tap Save.</div>
+  </div>
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-text"><strong style="color:var(--accent)">Important — switch your phone back to your home WiFi.</strong> After saving, your phone usually stays connected to the SKYORB-Setup hotspot. Go into your phone's WiFi settings and reconnect to your <strong>normal home network</strong>. (Your phone may do this automatically after a minute, but it's faster to switch it yourself.) If you skip this, the next step won't load.</div>
+  </div>
+  <div class="step">
+    <div class="step-num">6</div>
+    <div class="step-text">Now — with your phone on your home WiFi — open <strong>http://skyorb.local</strong> in a browser to set your location, radius, and airports. The radar display also shows this address on screen at startup, with a backup IP address if <code>skyorb.local</code> doesn't load.</div>
   </div>
 
   <div class="install-wrap">
