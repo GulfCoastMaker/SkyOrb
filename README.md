@@ -19,7 +19,9 @@ Flash your ESP32 directly from Chrome or Edge — no software to install.
 - **Animated radar sweep** — planes light up as the sweep passes, just like a real radar scope
 - **Flight details** — callsigns and altitudes shown right on the display
 - **Airport markers** — nearby airports shown on the radar, auto-found via OpenStreetMap
-- **Clock display** — a second round screen showing time, day, and date with automatic timezone
+- **Clock display** — a second round screen showing time, day, and date. It
+  shows UTC time until you set your location, then switches to your local
+  time zone automatically (with daylight saving)
 - **Phone setup** — set your location, search radius, and airports from a web page on your phone
 - **Tap to track** — tap any aircraft in the web portal to open it on FlightRadar24
 
@@ -78,6 +80,10 @@ RES, DC, and CS pins.
    called **SKYORB-Setup** (password: **radar1234**). On your phone, connect
    to that hotspot — a setup page pops up. Choose your home WiFi and enter
    the password, then save.
+
+   > **If the hotspot disappears before you finish:** it only stays open for
+   > 5 minutes. Just unplug the ESP32 and plug it back in — the SKYORB-Setup
+   > hotspot reopens and you can try again.
 4. **Switch your phone back to your home WiFi** — ⚠️ this is the step people
    miss. After saving, your phone usually stays stuck on the SKYORB-Setup
    hotspot. Go into your phone's WiFi settings and reconnect to your normal
