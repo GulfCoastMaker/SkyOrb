@@ -77,7 +77,7 @@ RES, DC, and CS pins.
 2. **Flash the firmware** — go to the [installer page](https://gulfcoastmaker.github.io/SkyOrb/)
    in Chrome or Edge, plug in your ESP32, and click **Install SkyOrb**.
 3. **Connect to WiFi** — after flashing, the ESP32 creates a WiFi hotspot
-   called **SKYORB-Setup** (password: **radar1234**). On your phone, connect
+   called **SKYORB-Setup** (password: **SKYORB1234**). On your phone, connect
    to that hotspot — a setup page pops up. Choose your home WiFi and enter
    the password, then save.
 
