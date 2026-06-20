@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SkyOrb Installer</title>
+<script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+<style>
+  :root {
+    --bg:      #0a0a0a;
+    --surface: #1a1a1a;
+    --accent:  #ff8c00;
+    --silver:  #c0c0c0;
+    --border:  #2e2e2e;
+    --text:    #e8e8e8;
+    --muted:   #888;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 48px 24px;
+    gap: 32px;
+  }
+
+  header { text-align: center; }
+  .logo {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 2px;
+  }
+  .tagline {
+    color: var(--silver);
+    font-size: 1rem;
+    margin-top: 6px;
+    letter-spacing: 1px;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+    width: 100%;
+    max-width: 540px;
+  }
+
+  .card h2 {
+    color: var(--silver);
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--accent);
+    margin-bottom: 20px;
+  }
+
+  .step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-bottom: 18px;
+  }
+  .step-num {
+    background: var(--accent);
+    color: #000;
+    font-weight: 700;
+    font-size: 0.85rem;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .step-text { color: var(--text); font-size: 0.95rem; line-height: 1.5; }
+  .step-text strong { color: var(--accent); }
+  .step-text a { color: var(--silver); }
+
+  .install-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 28px;
+  }
+
+  esp-web-install-button::part(button) {
+    background: transparent;
+    border: 2px solid var(--accent);
+    border-radius: 8px;
+    color: var(--accent);
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 14px 40px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: background 0.2s;
+  }
+  esp-web-install-button::part(button):hover {
+    background: #2a1a05;
+  }
+
+  .browser-note {
+    color: var(--muted);
+    font-size: 0.78rem;
+    text-align: center;
+  }
+  .browser-note a { color: var(--silver); }
+
+  .features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .feature {
+    background: #111;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+  .feature span { display: block; color: var(--accent); font-size: 1.1rem; margin-bottom: 4px; }
+
+  .hardware {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .hardware code {
+    background: #111;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1px 6px;
+    color: var(--silver);
+    font-size: 0.8rem;
+  }
+
+  footer {
+    color: var(--muted);
+    font-size: 0.75rem;
+    text-align: center;
+    margin-top: 16px;
+  }
+  footer a { color: var(--silver); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">✈ SkyOrb</div>
+  <div class="tagline">Live flight radar for ESP32 · Round 1.28" GC9A01 display</div>
+</header>
+
+<!-- Features -->
+<div class="card">
+  <h2>What You Get</h2>
+  <div class="features">
+    <div class="feature"><span>📡</span>Live ADS-B flight tracking via airplanes.live (free, no API key)</div>
+    <div class="feature"><span>🟢</span>Animated radar sweep with glowing aircraft blips</div>
+    <div class="feature"><span>🕐</span>Second display: digital clock with auto timezone</div>
+    <div class="feature"><span>📱</span>Configure everything from your phone — set location, radius, and airports</div>
+    <div class="feature"><span>🌍</span>Airport markers auto-found via OpenStreetMap</div>
+    <div class="feature"><span>📶</span>Zero-config WiFi setup — no code editing required</div>
+  </div>
+</div>
+
+<!-- Hardware -->
+<div class="card">
+  <h2>What You Need</h2>
+  <div class="hardware">
+    • <strong style="color:var(--silver)">30-pin ESP32 dev board</strong> (ESP-WROOM-32)
+      (<a href="https://www.amazon.com/dp/B0DF2YJSHN" target="_blank">like this one</a>)<br>
+    • <strong style="color:var(--silver)">Two GC9A01 round 1.28" displays</strong> (240×240 SPI, 7-pin)
+      (<a href="https://www.amazon.com/dp/B0B7TFRNN1" target="_blank">like these</a>) —
+      one for radar, one for the clock<br>
+    • <strong style="color:var(--silver)">30-pin ESP32 GPIO breakout board</strong> with screw terminals
+      (<a href="https://www.amazon.com/dp/B0BNQ85GF3" target="_blank">like this one</a>) —
+      lets you connect everything with screw terminals, no soldering required<br><br>
+    <strong style="color:var(--silver)">Wiring (radar display):</strong><br>
+    SCL→<code>D18</code> &nbsp; SDA→<code>D23</code> &nbsp; RES→<code>D4</code> &nbsp;
+    DC→<code>D2</code> &nbsp; CS→<code>D5</code> &nbsp; VCC→<code>3.3V</code> &nbsp; GND→<code>GND</code><br><br>
+    <strong style="color:var(--silver)">Wiring (clock display):</strong><br>
+    SCL→<code>D18</code> &nbsp; SDA→<code>D23</code> (shared) &nbsp;
+    RES→<code>D21</code> &nbsp; DC→<code>TX2</code> &nbsp; CS→<code>RX2</code> &nbsp;
+    VCC→<code>3.3V</code> &nbsp; GND→<code>GND</code>
+  </div>
+</div>
+
+<!-- Install -->
+<div class="card">
+  <h2>Install Firmware</h2>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-text">Use <strong>Google Chrome</strong> or <strong>Microsoft Edge</strong> on a desktop or laptop — this won't work on mobile or Firefox.</div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-text">Plug your <strong>ESP32 into a USB port</strong> and wait a few seconds for it to be detected.</div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-text">Click <strong>Install SkyOrb</strong> below, select your ESP32's COM port, and follow the prompts. It takes about 30 seconds.</div>
+  </div>
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-text">After flashing, your ESP32 will open a hotspot called <strong>SKYORB-Setup</strong> (password: <strong>radar1234</strong>). Connect to it with your phone, enter your home WiFi details, and you're live.</div>
+  </div>
+
+  <div class="install-wrap">
+    <esp-web-install-button manifest="manifest.json">
+      <button slot="activate">✈ Install SkyOrb</button>
+    </esp-web-install-button>
+    <div class="browser-note">
+      Requires Chrome or Edge on Windows / Mac / Linux.<br>
+      Not supported on iOS, Android, or Firefox.<br>
+      <a href="https://github.com/GulfCoastMaker/SkyOrb" target="_blank">View source on GitHub →</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  SkyOrb is open source and free to use.<br>
+  Built with ❤ using ESP32, TFT_eSPI, airplanes.live, and OpenStreetMap.
+</footer>
+
+</body>
+</html>

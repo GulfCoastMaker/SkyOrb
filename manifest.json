@@ -1,0 +1,31 @@
+{
+  "name": "SkyOrb Flight Radar",
+  "version": "1.0.0",
+  "home_assistant_domain": null,
+  "funding_url": null,
+  "new_install_prompt_erase": true,
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "improv": false,
+      "parts": [
+        {
+          "path": "firmware/bootloader.bin",
+          "offset": 4096
+        },
+        {
+          "path": "firmware/partitions.bin",
+          "offset": 32768
+        },
+        {
+          "path": "firmware/boot_app0.bin",
+          "offset": 57344
+        },
+        {
+          "path": "firmware/firmware.bin",
+          "offset": 65536
+        }
+      ]
+    }
+  ]
+}
