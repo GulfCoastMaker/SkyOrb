@@ -78,15 +78,21 @@ RES, DC, and CS pins.
    called **SKYORB-Setup** (password: **radar1234**). Connect your phone
    to it, and a setup page opens automatically. Choose your home WiFi and
    enter the password.
-4. **Set your location** — once it's on your network, the radar shows its IP
-   address. Open that address in your phone's browser to reach the SkyOrb
-   web portal, where you can:
+4. **Set your location** — once it's connected, the radar display shows the
+   web portal address on screen. On a phone or computer connected to the
+   **same WiFi**, open your browser and go to:
+
+   ### `http://skyorb.local`
+
+   (The display also shows a numeric IP address as a backup, in case
+   `skyorb.local` doesn't resolve on your network.) In the portal you can:
    - Enter your address or coordinates to center the radar
    - Choose your search radius (5–30 miles)
    - Add or remove airports
    - See a live copy of the radar and a tappable aircraft list
 
-That's it — planes should start appearing within a few seconds.
+That's it — planes should start appearing within a few seconds, and the
+clock's timezone updates automatically once your location is set.
 
 ---
 
